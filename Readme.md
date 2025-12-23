@@ -1,4 +1,4 @@
-# Day 2 – Simple Calculator 🧮
+# Simple Calculator 🧮
 
 ## Description
 A menu-driven Python calculator that performs basic and advanced arithmetic operations.
