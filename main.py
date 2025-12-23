@@ -9,6 +9,11 @@ def subtract(a, b):
 def multiply(a, b):
     return a * b
 
+def power(a,b):
+    return a ** b
+
+def modulus(a, b):
+    return a % b
 
 def divide(a, b):
     if b == 0:
@@ -23,15 +28,17 @@ def calculator():
         print("2. Subtraction")
         print("3. Multiplication")
         print("4. Division")
-        print("5. Exit")
+        print("5. Power")
+        print("6. Modulus")
+        print("7. Exit")
 
         choice = input("Enter your choice: ")
 
-        if choice == "5":
+        if choice == "7":
             print("Thank you for using the calculator!")
             break
 
-        if choice not in ["1", "2", "3", "4"]:
+        if choice not in ["1", "2", "3", "4","5","6"]:
             print("Invalid choice! Please try again.")
             continue
 
@@ -50,6 +57,10 @@ def calculator():
             print("Result:", multiply(num1, num2))
         elif choice == "4":
             print("Result:", divide(num1, num2))
+        elif choice == "5":
+            print("Result:", power(num1, num2))
+        elif choice == "6":
+            print("Result:", modulus(num1, num2))
 
 
 calculator()

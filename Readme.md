@@ -1,13 +1,14 @@
 # Day 2 – Simple Calculator 🧮
 
 ## Description
-A menu-driven Python calculator that performs basic arithmetic operations such as addition, subtraction, multiplication, and division.
+A menu-driven Python calculator that performs basic and advanced arithmetic operations.
 
 ## Features
-- Uses functions for each operation
-- Handles invalid inputs
-- Prevents division by zero
-- Continuous execution until user exits
+- Addition, Subtraction, Multiplication, Division
+- Power and Modulus operations
+- Input validation
+- Error handling for division/modulus by zero
+- Continuous execution until exit
 
 ## Concepts Used
 - Functions
