@@ -13,15 +13,19 @@ def power(a,b):
     return a ** b
 
 def modulus(a, b):
+    if b == 0:
+        return "Modulus by zero is not allowed"
     return a % b
+
 
 def divide(a, b):
     if b == 0:
-        return "Error: Division by zero is not allowed"
+        return "Division by zero is not allowed"
     return a / b
 
 
 def calculator():
+    history = []
     while True:
         print("\n====== Simple Calculator ======")
         print("1. Addition")
@@ -30,11 +34,27 @@ def calculator():
         print("4. Division")
         print("5. Power")
         print("6. Modulus")
-        print("7. Exit")
+        print("7. View History")
+        print("8. Clear History")
+        print("9. Exit")
 
         choice = input("Enter your choice: ")
 
         if choice == "7":
+            if not history:
+                print("No calculations Yet.")
+            else:
+                print("\n--- Calculation History ---")
+                for i, item in enumerate(history, start=1):
+                    print(f"{i}. {item}")
+            continue
+
+        if choice == "8":
+            history.clear()
+            print("History was cleared")
+            continue
+
+        if choice == "9":
             print("Thank you for using the calculator!")
             break
 
@@ -50,17 +70,30 @@ def calculator():
             continue
 
         if choice == "1":
-            print("Result:", add(num1, num2))
+            result = add(num1,num2)
+            record = f"{num1} + {num2} = {result}"
         elif choice == "2":
-            print("Result:", subtract(num1, num2))
+            result = subtract(num1,num2)
+            record = f"{num1} - {num2} = {result}"
         elif choice == "3":
-            print("Result:", multiply(num1, num2))
+            result = multiply(num1,num2)
+            record = f"{num1} * {num2} = {result}"
         elif choice == "4":
-            print("Result:", divide(num1, num2))
+            result = divide(num1,num2)
+            record = f"{num1} / {num2} = {result}"
         elif choice == "5":
-            print("Result:", power(num1, num2))
+            result = power(num1,num2)
+            record = f"{num1} ** {num2} = {result}"
         elif choice == "6":
-            print("Result:", modulus(num1, num2))
+            result = modulus(num1,num2)
+            record = f"{num1} % {num2} = {result}"
+        
+        if isinstance(result, str):
+            print(result)
+        else:
+            history.append(record)
+            print("Result:", result)
+
 
 
 calculator()
