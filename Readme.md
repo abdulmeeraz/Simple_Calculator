@@ -1,6 +1,5 @@
 # Simple Calculator 🧮
 
-# Day 2 – Simple Calculator 🧮
 
 ## Description
 A menu-driven Python calculator application that performs basic and advanced arithmetic operations.  
